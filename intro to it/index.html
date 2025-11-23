@@ -1,42 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me - Behruz</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Behruz's Personal Homepage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        header p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #2575fc;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+            font-size: 1.8rem;
+        }
+
+        .intro {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .intro p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .classes-list, .favorites-list, .neighbors {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            padding-left: 5px;
+        }
+
+        a {
+            color: #2575fc;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        a:hover {
+            color: #6a11cb;
+            text-decoration: underline;
+        }
+
+        .moods {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .mood-images {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+
+        .mood {
+            text-align: center;
+            flex: 1;
+            max-width: 250px;
+        }
+
+        .mood img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+
+        .mood img:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .mood p {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #444;
+        }
+
+        .github {
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        .github-link {
+            display: inline-block;
+            background: #2575fc;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            margin-top: 10px;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(37, 117, 252, 0.4);
+        }
+
+        .github-link:hover {
+            background: #6a11cb;
+            text-decoration: none;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(106, 17, 203, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 30px 0;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .mood-images {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .main-content {
+                padding: 25px;
+            }
+        }
+
+        /* Animation for page load */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .main-content {
+            animation: fadeIn 0.8s ease-out;
+        }
+    </style>
 </head>
 <body>
-  <h1>Behruz</h1>
-  <p>Hello! My name is <b>Behruz</b>. I am a student at Inha University in Tashkent, studying <b>Software Engineering</b>.</p>
-
-  <h2>My Classes</h2>
-  <ul>
-    <li>Introduction to IT</li>
-    <li>Object-Oriented Programming</li>
-    <li>Mathematics</li>
-    <li>Physics</li>
-  </ul>
-
-  <h2>My Favorite Movies</h2>
-  <ol>
-    <li><a href="https://www.imdb.com/title/tt4154796/" target="_blank">Avengers: Endgame</a></li>
-    <li><a href="https://www.imdb.com/title/tt1375666/" target="_blank">Inception</a></li>
-    <li><a href="https://www.imdb.com/title/tt0167260/" target="_blank">The Lord of the Rings: The Two Towers</a></li>
-  </ol>
-
-  <h2>My Emotions</h2>
-  <p>When I am happy:</p>
-  <img src="happy.jpg" alt="Happy Image" width="200">
-  <p>When I am sad:</p>
-  <img src="sad.jpg" alt="Sad Image" width="200">
-
-  <h2>Something about my neighbor</h2>
-  <p>My friend sitting next to me always listens to music while coding ??</p>
-
-  <footer>
-    <p>Visit my homepage: <a href="https://yourusername.github.io" target="_blank">https://github.com/zbeha710/zbeha710.github.io.git</a></p>
-  </footer>
+    <div class="container">
+        <header>
+            <h1>Behruz's Personal Homepage</h1>
+            <p>Welcome to my personal space on the web. Learn more about me and my interests!</p>
+        </header>
+        
+        <div class="main-content">
+            <section class="intro">
+                <h2>About Me</h2>
+                <p>My name is <strong>Zoirov Behruz</strong>(u2510262), and I'm a <strong>Computer Science</strong> student at Inha University.</p>
+                <p>I love exploring new technologies and building creative solutions to real-world problems.</p>
+            </section>
+            
+            <section class="classes-list">
+                <h2>My Current Classes</h2>
+                <ul>
+                    <li>Intro to IT</li>
+                    <li>OOP</li>
+                    <li>Calculus</li>
+                    <li>Physics</li>
+                    <li>Academic English</li>
+                </ul>
+            </section>
+            
+            <section class="favorites-list">
+                <h2>My Favorite Movies & TV Shows</h2>
+                <ol>
+                    <li><a href="https://www.imdb.com/title/tt0111161/" target="_blank">The Shawshank Redemption</a> - A timeless classic about hope and friendship</li>
+                    <li><a href="https://www.imdb.com/title/tt6723592/" target="_blank">Tenet</a> - Mind-bending sci-fi thriller</li>
+                    <li><a href="https://www.imdb.com/title/tt0944947/" target="_blank">Game of Thrones</a> - Epic fantasy drama with political intrigue</li>
+                </ol>
+            </section>
+            
+            <section class="moods">
+                <h2>My Moods</h2>
+                <div class="mood-images">
+                    <div class="mood">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0tnaHGSf3mk1lPA5Xzcy3XDUYjwt1pZrTGg&s" alt="Happy mood">
+                        <p>When I'm happy</p>
+                    </div>
+                    <div class="mood">
+                        <img src="data:image/jpeg;base64,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" alt="Sad mood">
+                        <p>When I'm sad</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="neighbors">
+                <h2>About My Neighbor</h2>
+                <p>My neighbor Muhammadjon is an amazing football player. He is from Samarkand and he is very kind. </p>
+            </section>
+            
+            <section class="github">
+                <h2>Visit My GitHub Page</h2>
+                
+                <a href="https://github.com/zbeha710/zbeha710.github.io" class="github-link" target="_blank">zbeha710.github.io</a>
+            </section>
+        </div>
+        
+        
+    </div>
 </body>
 </html>
-
